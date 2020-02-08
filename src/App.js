@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   const navLinks = [
     {
-      text: "Home3",
+      text: "Home",
       path: "/",
       icon: "ion-ios-home"
     },
