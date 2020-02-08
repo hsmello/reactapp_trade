@@ -86,7 +86,8 @@ class Analysis extends Component {
       
       if(row["Period Desc."] === this.state.yearSelected
           && row["Trade Flow"] === this.state.tradeFlowSelected  ) {
-        if(!jsonData[jsonData["Commodity"]]) {   
+            
+        if(!jsonData[row["Commodity"]]) {   
           jsonData[row["Commodity"]] = Number(row["Trade Value (US$)"])
         } else {
           jsonData[row["Commodity"]] += Number(row["Trade Value (US$)"])
