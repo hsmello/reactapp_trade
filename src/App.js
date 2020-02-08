@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router } from "@reach/router";
-import Analysis2 from "./assets/pages/Analysis";
-import Home from "./assets/pages/Home";
-import Contact from "./assets/pages/Contact";
-import ResponsiveNavegation from "./assets/Components/ResponsiveNavagation"
+import Analysis2 from "./pages/Analysis";
+import Home from "./pages/Home";
+import Contact from "./pages/Contact";
+import ResponsiveNavegation from "./Components/ResponsiveNavagation"
 import logo from './logo.svg';
 import './App.css';
 

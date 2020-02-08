@@ -4,7 +4,7 @@ import highcharts3d from 'highcharts/highcharts-3d';
 import HighchartsReact from "highcharts-react-official";
 import HC_exporting from 'highcharts/modules/exporting';
 import Papa from 'papaparse';
-import arquivo from '../../TradeDataAnalysis.csv';
+import arquivo from '../data-files/TradeDataAnalysis.csv';
 
 highcharts3d(Highcharts);
 HC_exporting(Highcharts);
