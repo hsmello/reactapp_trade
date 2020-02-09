@@ -64,9 +64,9 @@ class Analysis extends Component {
     super(props);
     this.state = {
       graphicOptions: options,
-      yearSelected: null,
-      tradeFlowSelected: null,
-      partnerSelected: null,
+      yearSelected: "2017",
+      tradeFlowSelected: "Export",
+      partnerSelected: "France",
       fileRows: [],
       showGraph: true
     }
