@@ -4,20 +4,29 @@ import Particles from 'react-particles-js';
 const ParticlesOpt = {
     particles: {
         number: {
-            value: 450,
+            value: 100,
             density: {
                 enable: true,
                 value_arena: 100
             }
         }
+        
+    }, interactivity: {
+        events: {
+            onhover: {
+                enable: true,
+                mode: "repulse"
+            }
+        }
     }
 }
+
 class Home extends Component {
     render(){
         return(
-            <div style={{backgroundColor: "black"}}>
+            <div style={{backgroundColor: "rgb(110, 15, 17)", height: 'calc(100vh - 60px)'}}>
                 
-                <div 
+                <div className='homePageTitle'
                     style={{
                         color: "white",
                         display: "flex",
@@ -28,6 +37,7 @@ class Home extends Component {
                 </div>
 
                 <Particles 
+                    height='calc(100vh - 70px)'
                     params={ParticlesOpt} 
                 />
             </div>
