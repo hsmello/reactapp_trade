@@ -13,6 +13,7 @@ HC_exporting(Highcharts);
 
 let options = {
     chart: {
+      width: 1200,
       animation: true,
       type: 'pie',
       options3d: {
