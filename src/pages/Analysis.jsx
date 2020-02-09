@@ -21,7 +21,7 @@ let options = {
       }
     },
     title: {
-      text: 'Exports by Commodity'
+      text: "United Kingdom International Trade" 
     },
     // subtitle: {
     //   text: '3D donut in Highcharts'
@@ -52,6 +52,13 @@ const tradeFlowOptions = [
   {label: 'Import', value: 'Import'}
 ]
 
+const tradePartnerOptions = [
+  {label: 'China', value: 'China'},
+  {label: 'France', value: 'France'},
+  {label: 'Germany', value: 'Germany'},
+  {label: 'India', value: 'India'}
+]
+
 class Analysis extends Component {
   constructor(props){
     super(props);
@@ -59,6 +66,7 @@ class Analysis extends Component {
       graphicOptions: options,
       yearSelected: null,
       tradeFlowSelected: null,
+      partnerSelected: null,
       fileRows: [],
       showGraph: true
     }
@@ -85,7 +93,8 @@ class Analysis extends Component {
     for(let row of rows) {
       
       if(row["Period Desc."] === this.state.yearSelected
-          && row["Trade Flow"] === this.state.tradeFlowSelected  ) {
+          && row["Trade Flow"] === this.state.tradeFlowSelected
+          && row["Partner"] === this.state.partnerSelected  ) {
             
         if(!jsonData[row["Commodity"]]) {   
           jsonData[row["Commodity"]] = Number(row["Trade Value (US$)"])
@@ -142,8 +151,7 @@ class Analysis extends Component {
 
   componentDidMount(){
     this.GetData().then(res => {
-      this.state.rows = res;
-      
+      this.state.rows = res;      
     })
   }
 
@@ -153,6 +161,10 @@ class Analysis extends Component {
 
   onSelectTradeFlow(ev) {
     this.setState({...this.state, tradeFlowSelected: ev.tradeFlowSelected})
+  }
+
+  onSelectPartner(ev) {
+    this.setState({...this.state, partnerSelected: ev.partnerSelected})
   }
 
   refreshGraph(graphicOptions) {
@@ -185,13 +197,21 @@ class Analysis extends Component {
                     </div>
                   </div>
 
-
                   <div className="p-col">
                     <div>
                       <Dropdown value={this.state.tradeFlowSelected} 
                         options={tradeFlowOptions} 
                         onChange={(e) => {this.onSelectTradeFlow({tradeFlowSelected: e.value})}} 
                         placeholder="Select a trade flow"/>
+                    </div>
+                  </div>
+
+                  <div className="p-col">
+                    <div>
+                      <Dropdown value={this.state.partnerSelected} 
+                        options={tradePartnerOptions} 
+                        onChange={(e) => {this.onSelectPartner({partnerSelected: e.value})}} 
+                        placeholder="Select a Partner"/>
                     </div>
                   </div>
 
