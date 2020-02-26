@@ -22,7 +22,7 @@ let options = {
       }
     },
     title: {
-      text: "United Kingdom International Trade" 
+      text: "United Kingdom International Trade"
     },
     // subtitle: {
     //   text: '3D donut in Highcharts'
