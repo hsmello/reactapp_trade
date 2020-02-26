@@ -4,7 +4,7 @@ import Particles from 'react-particles-js';
 const ParticlesOpt = {
     particles: {
         number: {
-            value: 100,
+            value: 150,
             density: {
                 enable: true,
                 value_arena: 100
@@ -33,7 +33,7 @@ class Home extends Component {
                         justifyContent: "center",
                     }}
                 >
-                    Welcome to the International Trade Analytical Website sponsed by LeFanucaNoobinho's skills
+                    International Trade Analysis
                 </div>
 
                 <Particles 
